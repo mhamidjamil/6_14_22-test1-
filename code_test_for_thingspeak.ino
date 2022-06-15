@@ -51,7 +51,7 @@ void loop() {
 
       // Your Domain name with URL path or IP address with path
       //   http.begin(serverPath.c_str());
-      test++;
+      // test++;
       http.begin(serverPath);
 
       // Send HTTP GET request
