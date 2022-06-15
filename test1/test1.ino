@@ -67,6 +67,8 @@ void handleNewMessages(int numNewMessages) {
       welcome += "/led_off to turn GPIO OFF \n";
       welcome += "/state to request current GPIO state \n";
       bot.sendMessage(chat_id, welcome, "");
+    }else{
+      Serial.println("Unexpected error");
     }
 
     if (text == "/led_on") {
