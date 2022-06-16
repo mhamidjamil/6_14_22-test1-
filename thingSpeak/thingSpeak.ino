@@ -50,7 +50,7 @@ void loop() {
 
     String serverPath = serverName + String(test);
     if (test < 25) {
-        whatsappAlert(test);
+//        whatsappAlert(test);
     }
     // Your Domain name with URL path or IP address with path
     //   http.begin(serverPath.c_str());
