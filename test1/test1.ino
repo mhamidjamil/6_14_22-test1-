@@ -17,7 +17,7 @@
 
 // Replace with your network credentials
 const char* ssid = "Revenant";
-const char* password = "87656787";
+const char* password = "56787656";
 
 // Initialize Telegram BOT
 #define BOTtoken "5485603904:AAEIA0YgfrAGxd8luaeEt-DAjjqC7il5iHM"  // your Bot Token (Get from Botfather)

@@ -5,7 +5,7 @@
 "firstproject-99bb2-default-rtdb.asia-southeast1.firebasedatabase.app/"
 #define FIREBASE_AUTH "yEf6VGsxnPXyfKp0B0sUeuWBQCxX0VqWRGEk6VPR"
 #define WIFI_SSID "Revenant"
-#define WIFI_PASSWORD "87656787"
+#define WIFI_PASSWORD "56787656"
 
 int led = LED_BUILTIN;
 String readString;

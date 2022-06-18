@@ -4,7 +4,7 @@ int test = 200;
 
 
 const char *ssid = "Revenant";
-const char *password = "87656787";
+const char *password = "56787656";
 
 // Your Domain name with URL path or IP address with path
 //  String serverName = "http://192.168.1.106:1880/update-sensor";

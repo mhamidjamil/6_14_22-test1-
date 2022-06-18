@@ -4,7 +4,7 @@
 // int test = 20;
 
 const char *ssid = "Revenant";
-const char *password = "87656787";
+const char *password = "56787656";
 
 // Your Domain name with URL path or IP address with path
 //  String serverName = "http://192.168.1.106:1880/update-sensor";
@@ -23,7 +23,7 @@ unsigned long lastTime = 0;
 // unsigned long timerDelay = 600000;
 // Set timer to 5 seconds (5000)
 unsigned long timerDelay = 5000;
-
+http87656787
 void setup() {
   Serial.begin(115200);
 
