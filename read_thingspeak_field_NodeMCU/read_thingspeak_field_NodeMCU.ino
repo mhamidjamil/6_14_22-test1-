@@ -1,58 +1,40 @@
-#include <ThingSpeak.h>
+/////////////////////////////////
+// Generated with a lot of love//
+// with TUNIOT FOR ESP8266     //
+// Website: Easycoding.tn      //
+/////////////////////////////////
 #include <ESP8266WiFi.h>
 
-// Network Parameters
-const char* ssid     = "Revenant";
-const char* password = "56787656";
+#include <ThingSpeak.h>
 
-// ThingSpeak information
-char* server = "api.thingspeak.com";
-unsigned long channelID = 1769780;
-char* readAPIKey = "QLL7IHIBXRWJ38GU";
-unsigned int dataFieldOne = 1;                            // Field to write temperature data
-
-// Global variables
-// These constants are device specific.  You need to get them from the manufacturer or determine them yourself.
-float aConst = 2.25E-02;
 WiFiClient client;
 
-void setup() {
-
+void setup()
+{
   Serial.begin(115200);
-  Serial.println("Start");
-  connectWiFi();
+ThingSpeak.begin(client);
 
-  // Read the constants at startup.
-  aConst = readTSData( channelID, dataFieldOne );
-  //Serial.println(aConst);
+  WiFi.disconnect();
   delay(1000);
-}
+  Serial.println("Start");
+  Serial.println("Connecting");
+   WiFi.begin("Revenant","56787656");
+  while ((!(WiFi.status() == WL_CONNECTED))){
+    delay(200);
+    Serial.println("..");
 
-void loop() {
-
-  delay(2000);
-  Serial.println("Waiting...");
-  //reading data from thing speak
-  aConst = readTSData( channelID, dataFieldOne );
-  Serial.println(aConst);
-
-}
-
-int connectWiFi() {
-  WiFi.begin( ssid, password );
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
   }
+  Serial.println("Connected ");
+  Serial.println("IP is : ");
+  Serial.println((WiFi.localIP().toString()));
 
-  Serial.println( "Connected" );
-  ThingSpeak.begin( client );
 }
 
-float readTSData( long TSChannel, unsigned int TSField ) {
 
-  float data =  ThingSpeak.readFloatField( TSChannel, TSField, readAPIKey );
-  Serial.println( " Data read from ThingSpeak: " + String( data, 9 ) );
-  return data;
+void loop()
+{
+
+    Serial.println((ThingSpeak.readIntField(1769780,1,"QLL7IHIBXRWJ38GU")));
+    delay(3000);
 
 }
